@@ -33,12 +33,14 @@ function SolveburgersEquation(f0, mu, N)
         end
         timetext.String = ['$t = ', sprintf('%0.2f',(n-1)*dt),'$'];
         drawnow;
-        frame = getframe(1); 
-        im = frame2im(frame);
-        [imind,cm] = rgb2ind(im,256); 
-        % Write the frame to the GIF file
-        imwrite(imind, cm, 'N_wave.gif', 'gif', ...
-                   'WriteMode', 'append', 'DelayTime', delaytime);
+        if(~mod(n,5))
+            frame = getframe(1); 
+            im = frame2im(frame);
+            [imind,cm] = rgb2ind(im,256); 
+            % Write the frame to the GIF file
+            imwrite(imind, cm, 'N_wave.gif', 'gif', ...
+                       'WriteMode', 'append', 'DelayTime', delaytime);
+        end
     end
 end
 
