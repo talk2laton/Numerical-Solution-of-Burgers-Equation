@@ -1,6 +1,6 @@
 f0 = @(x) -exp(-(x+1).^2/2) + exp(-(x-1).^2/2);
 N = 501;
-mu = [1,0.1,0.01];
+mu = [1,0.1,0.01,];
 SolveburgersEquation(f0, mu, N);
 
 function SolveburgersEquation(f0, mu, N)

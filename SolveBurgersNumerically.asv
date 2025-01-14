@@ -1,6 +1,6 @@
 f0 = @(x) -exp(-(x+1).^2/2) + exp(-(x-1).^2/2);
 N = 501;
-mu = [1,0.1,0.01];
+mu = [1,0.1,0.01,];
 SolveburgersEquation(f0, mu, N);
 
 function SolveburgersEquation(f0, mu, N)
@@ -12,11 +12,16 @@ function SolveburgersEquation(f0, mu, N)
         interpreter='latex', Location='best', Box='off');
     axis([min(X), max(X), min(U(:)), max(U(:))]); hold off; box on;
     ax = gca; ax.TickLabelInterpreter = "latex"; ax.FontSize = 12;
-    xlabel("$x$", Interp)
+    xlabel("$x$", Interpreter="latex"); ylabel("$u$", Interpreter="latex");
     timetext = text(-6, 0.8, ['$t = ',sprintf('%0.2f', 0),'$'], ...
         Interpreter = "latex", FontSize = 12);
     drawnow;
-    exportgraphics(gcf,'N_wave.gif','Append',true);
+    frame = getframe(1); 
+    im = frame2im(frame);
+    [imind,cm] = rgb2ind(im,256); 
+    delaytime = 0.05;
+    imwrite(imind, cm, 'N_wave.gif', 'gif', 'Loopcount', inf, ...
+        'DelayTime', delaytime); 
     for n = 1:501
         Unp1 = U(2:end-1, (n-1)*mn + (1:mn));
         for m = 1:mn
@@ -28,10 +33,14 @@ function SolveburgersEquation(f0, mu, N)
         end
         timetext.String = ['$t = ', sprintf('%0.2f',(n-1)*dt),'$'];
         drawnow;
-
-    
-        % Write the frame to the GIF file
-         exportgraphics(gcf,'N_wave.gif','Append',true);
+        if(~mod(n,5))
+            frame = getframe(1); 
+            im = frame2im(frame);
+            [imind,cm] = rgb2ind(im,256); 
+            % Write the frame to the GIF file
+            imwrite(imind, cm, 'N_wave.gif', 'gif', ...
+                       'WriteMode', 'append', 'DelayTime', delaytime);
+        end
     end
 end
 
