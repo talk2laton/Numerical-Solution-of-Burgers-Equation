@@ -4,7 +4,7 @@ Burgers' equation is a fundamental partial differential equation (PDE) that aris
 
 The Equation:
 In its general form, Burgers' equation is expressed as:
-\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = ν \frac{\partial^2 u}{\partial x^2} 
+$$\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = ν \frac{\partial^2 u}{\partial x^2} $$
 
 where:
 u: The dependent variable (often representing velocity or density) 
