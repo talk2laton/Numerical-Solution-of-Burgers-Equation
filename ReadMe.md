@@ -4,13 +4,14 @@ Burgers' equation is a fundamental partial differential equation (PDE) that aris
 
 The Equation:
 In its general form, Burgers' equation is expressed as:
+
 $$\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = ν \frac{\partial^2 u}{\partial x^2} $$
 
 where:
-u: The dependent variable (often representing velocity or density) 
-t: Time 
-x: Spatial coordinate 
-ν: Viscosity coefficient (a constant) 
+$u$: The dependent variable (often representing velocity or density) 
+$t$: Time 
+$x$: Spatial coordinate 
+$\nu$: Viscosity coefficient (a constant) 
 Key Features:
 Nonlinearity: The term u ∂u/∂x introduces nonlinearity, making the equation challenging to solve analytically. 
 Convection and Diffusion: The equation balances convective effects (represented by the nonlinear term) and diffusive effects (represented by the second-order derivative term). 
