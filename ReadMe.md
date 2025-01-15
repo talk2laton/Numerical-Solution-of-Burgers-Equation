@@ -45,3 +45,5 @@ With finite difference, we can approach it in 2 ways.
 We will look at the second method. 
 
 $$\frac{u_i^{n+1} - u_i^{n}}{\Delta t} + u_{i}^{n+1} \frac{u_{i+1}^{n+1} - u_{i-1}^{n+1}}{2\Delta x} = ν \frac{u_{i-1}^{n+1} - 2u_{i}^{n+1} + u_{i-1}^{n+1}}{\partial x^2} $$
+
+This is now expressed in the form $F(u_{i}^{n+1}) = 0$ so that u_{i}^{n+1} can now be solved for using newton's method such as Fsolve in matlab
