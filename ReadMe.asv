@@ -44,4 +44,4 @@ With finite difference, we can approach it in 2 ways.
 
 We will look at the second method. 
 
-$$\frac{u_i^{n+1} - u_i^{n}}{\Delta t} + u \frac{u_{i-1}^{n+1} - u_{i-1}^{n+1}}{2\Delta x} = ν \frac{u_{i-1}^{n+1} - 2u_{i}^{n+1}+ u_{i-1}^{n+1}}{\partial x^2} $$
+$$\frac{u_i^{n+1} - u_i^{n}}{\Delta t} + u \frac{u_i^{n+1} - u_i^{n}}{\partial x} = ν \frac{\partial^2 u}{\partial x^2} $$
