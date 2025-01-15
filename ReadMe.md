@@ -8,9 +8,9 @@ In its general form, Burgers' equation is expressed as:
 $$\frac{\partial u}{\partial t} + u \frac{\partial u}{\partial x} = ν \frac{\partial^2 u}{\partial x^2} $$
 
 where:
-> $u$: The dependent variable (often representing velocity or density) 
-> $t$: Time 
-> $x$: Spatial coordinate 
+> $u$: The dependent variable (often representing velocity or density) \\
+> $t$: Time \\
+> $x$: Spatial coordinate\\ 
 > $\nu$: Viscosity coefficient (a constant) 
 
 Key Features:
