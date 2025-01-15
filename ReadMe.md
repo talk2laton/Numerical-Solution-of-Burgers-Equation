@@ -17,24 +17,32 @@ where:
 > $\nu$: Viscosity coefficient (a constant) 
 
 Key Features:
-> Nonlinearity: The term $u \frac{\partial u}{\partial x} $ introduces nonlinearity, making the equation challenging to solve analytically. 
-> Convection and Diffusion: The equation balances convective effects (represented by the nonlinear term) and diffusive effects (represented by the second-order derivative term). 
+> Nonlinearity: The term $u \frac{\partial u}{\partial x} $ introduces nonlinearity, making the equation challenging to solve analytically.
+
+> Convection and Diffusion: The equation balances convective effects (represented by the nonlinear term) and diffusive effects (represented by the second-order derivative term).
+
 > Viscosity: The viscosity coefficient (ν) controls the strength of diffusion. When ν = 0, the equation becomes the inviscid Burgers' equation, which exhibits shock wave formation. 
 
 Applications:
->  Fluid Mechanics: Models the behavior of viscous fluids, including shock waves and turbulence. 
->  Traffic Flow: Describes the dynamics of vehicular traffic, capturing phenomena like traffic jams and wave propagation. 
->  Gas Dynamics: Used to study the flow of gases, particularly in situations involving shock waves. 
+>  Fluid Mechanics: Models the behavior of viscous fluids, including shock waves and turbulence.
+
+>  Traffic Flow: Describes the dynamics of vehicular traffic, capturing phenomena like traffic jams and wave propagation.
+
+>  Gas Dynamics: Used to study the flow of gases, particularly in situations involving shock waves.
+
 >  Noise Propagation: Models the propagation of sound waves in certain media.
 
 Analytical Solutions:
->   Inviscid Burgers' Equation (ν = 0): Can be solved using the method of characteristics. 
+>   Inviscid Burgers' Equation (ν = 0): Can be solved using the method of characteristics.
+
 >   Viscous Burgers' Equation (ν > 0): Can be transformed into the heat equation using the Cole-Hopf transformation, allowing for analytical solutions in some cases.
 
 Numerical Methods:
 For more complex cases, numerical methods are often employed, such as:
 >   Finite Difference Methods: Discretize the equation on a grid and approximate derivatives using finite differences.
+
 >   Finite Element Methods: Divide the domain into elements and approximate the solution using piecewise polynomials.
+
 >   Spectral Methods: Represent the solution as a sum of basis functions (e.g., Fourier series) and solve the resulting system of equations. 
 
 Challenges and Significance:
@@ -43,6 +51,7 @@ Challenges and Significance:
 Now we look at the numerical solutions using finite difference.
 With finite difference, we can approach it in 2 ways. 
 > 1. We can use discretize only the spartial component and perform numerical intergation over temporal variable (this is called method of lines)
+
 > 2. We can perform full descritzation over spartial and temporal variable and then solve the system of nonlinear algebraic equations. 
 
 We will look at the second method. 
