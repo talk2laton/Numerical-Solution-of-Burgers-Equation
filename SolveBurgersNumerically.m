@@ -46,6 +46,6 @@ end
 
 function res = DiscretPDE(u, un, mu, dx, dt, N)
     U = [2*u(1)-u(2);u;2*u(end)-u(end-1)];
-    m = 2:N-1; ump1 = U(m+1); umm1 = U(m-1);
-    res = (u-un)/dt + u.*(ump1-umm1)/(2*dx) - mu*(ump1-2*u+umm1)/dx^2;
+    i = 2:N-1; u_ip1 = U(i+1); u_im1 = U(i-1);
+    res = u-un + dt*(u.*(u_ip1-u_im1)/(2*dx) - mu*(u_ip1-2*u+u_im1)/dx^2);
 end
